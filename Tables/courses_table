@@ -1,0 +1,10 @@
+CREATE TABLE `courses` (
+  `course_id` int(11) NOT NULL AUTO_INCREMENT,
+  `course_name` varchar(45) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `course_professors_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`course_id`),
+  UNIQUE KEY `courses_id_UNIQUE` (`course_id`),
+  UNIQUE KEY `course_name_UNIQUE` (`course_name`),
+  KEY `course_professors_id_idx` (`course_professors_id`),
+  CONSTRAINT `course_professors_id` FOREIGN KEY (`course_professors_id`) REFERENCES `professors` (`professor_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci

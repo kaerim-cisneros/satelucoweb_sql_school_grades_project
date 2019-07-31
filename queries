@@ -1,0 +1,104 @@
+SELECT professors.professor_name, grades.grade_course_id, AVG(grades.grade)
+FROM grades JOIN professors
+	ON grades.grade_course_id = professors.professor_course_id
+GROUP BY grade_course_id;
+
+SELECT professors.professor_name, professors.professor_last_name, grades.grade_course_id as COURSE_ID, avg(grades.grade)as Average_Grade
+FROM grades 
+JOIN professors
+ ON grades.grade_course_id = professors.professor_course_id
+
+WHERE professors.professor_id BETWEEN 1 AND 10 
+GROUP BY COURSE_ID;
+
+SELECT students.student_name, students.student_last_name, MAX(grade)
+FROM grades JOIN students
+	ON grades.grade_student_id = students.student_id    
+GROUP BY grade_student_id;
+
+SELECT student_name, student_last_name
+FROM students
+WHERE student_first_course_id = 1
+OR student_second_course_id = 1
+OR student_third_course_id = 1
+OR student_forth_course_id = 1
+OR student_fifth_course_id = 1;
+
+SELECT student_name, student_last_name
+FROM students
+WHERE student_first_course_id = 2
+OR student_second_course_id = 2
+OR student_third_course_id = 2
+OR student_forth_course_id = 2
+OR student_fifth_course_id = 2;
+
+SELECT student_name, student_last_name
+FROM students
+WHERE student_first_course_id = 3
+OR student_second_course_id = 3
+OR student_third_course_id = 3
+OR student_forth_course_id = 3
+OR student_fifth_course_id = 3;
+
+SELECT student_name, student_last_name
+FROM students
+WHERE student_first_course_id = 4
+OR student_second_course_id = 4
+OR student_third_course_id = 4
+OR student_forth_course_id = 4
+OR student_fifth_course_id = 4;
+
+SELECT student_name, student_last_name
+FROM students
+WHERE student_first_course_id = 5
+OR student_second_course_id = 5
+OR student_third_course_id = 5
+OR student_forth_course_id = 5
+OR student_fifth_course_id = 5;
+
+SELECT student_name, student_last_name
+FROM students
+WHERE student_first_course_id = 6
+OR student_second_course_id = 6
+OR student_third_course_id = 6
+OR student_forth_course_id = 6
+OR student_fifth_course_id = 6;
+
+SELECT student_name, student_last_name
+FROM students
+WHERE student_first_course_id = 7
+OR student_second_course_id = 7
+OR student_third_course_id = 7
+OR student_forth_course_id = 7
+OR student_fifth_course_id = 7;
+
+SELECT student_name, student_last_name
+FROM students
+WHERE student_first_course_id = 8
+OR student_second_course_id = 8
+OR student_third_course_id = 8
+OR student_forth_course_id = 8
+OR student_fifth_course_id = 8;
+
+SELECT student_name, student_last_name
+FROM students
+WHERE student_first_course_id = 9
+OR student_second_course_id = 9
+OR student_third_course_id = 9
+OR student_forth_course_id = 9
+OR student_fifth_course_id = 9;
+
+SELECT student_name, student_last_name
+FROM students
+WHERE student_first_course_id = 10
+OR student_second_course_id = 10
+OR student_third_course_id = 10
+OR student_forth_course_id = 10
+OR student_fifth_course_id = 10;
+
+
+SELECT courses.course_name as Course, grades.grade_course_id as ID, avg(grades.grade)as Average_Grade
+FROM grades JOIN courses
+	ON grades.grade_course_id = courses.course_id
+GROUP BY grade_course_id
+ORDER BY Average_Grade ASC;
